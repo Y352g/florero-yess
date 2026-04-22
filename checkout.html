@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Finalizar compra</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body class="fondo-checkout">
+
+<header>
+    <h1>🛒 Finalizar compra</h1>
+</header>
+
+<section class="checkout-grid">
+
+
+<!-- CARD 1: RESUMEN -->
+<div class="card card1">
+    <h2>Resumen de compra</h2>
+    <ul id="lista"></ul>
+    <h3 id="total"></h3>
+    <button onclick="vaciarCarrito()">🗑 Vaciar carrito</button>
+</div>
+
+<!-- CARD 2: FORMULARIO -->
+<div class="card card2">
+    <h2>Datos del cliente</h2>
+
+    <form onsubmit="guardarDatos(event)">
+        <label>Nombre:</label>
+        <input type="text" id="nombre" required>
+
+        <label>Dirección:</label>
+        <input type="text" id="direccion" required>
+
+        <label>Fecha de entrega:</label>
+        <input type="date" id="fecha" required>
+
+        <button type="submit">Confirmar pedido</button>
+    </form>
+</div>
+
+<!-- CARD 3: VALIDACIÓN -->
+<div class="card card3">
+    <h2>Validación del sistema</h2>
+
+    <p>
+        Para validar el funcionamiento del sistema, realicé pruebas navegando entre las diferentes páginas, agregando productos al carrito y verificando que los datos se almacenaran correctamente mediante localStorage.
+    </p>
+
+    <p>
+        También implementé validaciones en el formulario para asegurar que el usuario complete los campos obligatorios antes de confirmar su pedido, lo cual mejora la confiabilidad del sistema.
+    </p>
+</div>
+
+
+</section>
+
+<div class="nav-btns">
+    <a href="productos.html" class="btn-nav">⬅ Volver</a>
+</div>
+
+<script>
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+let lista = document.getElementById("lista");
+let total = 0;
+
+carrito.forEach(item => {
+    let li = document.createElement("li");
+
+    li.innerHTML = `
+        <div class="item-carrito">
+            <img src="${item.imagen}">
+            <div>
+                <p><strong>${item.nombre}</strong></p>
+                <p>Precio: Q${item.precio}</p>
+            </div>
+        </div>
+    `;
+
+    lista.appendChild(li);
+    total += item.precio;
+
+    
+});
+
+document.getElementById("total").textContent = "Total: Q" + total;
+
+function guardarDatos(e){
+    e.preventDefault();
+
+    let datos = {
+        nombre: document.getElementById("nombre").value,
+        direccion: document.getElementById("direccion").value,
+        fecha: document.getElementById("fecha").value
+    };
+
+    localStorage.setItem("datos", JSON.stringify(datos));
+    window.location.href = "confirmacion.html";
+}
+
+function vaciarCarrito(){
+    localStorage.removeItem("carrito");
+    location.reload();
+}
+
+
+</script>
+
+</body>
+</html>

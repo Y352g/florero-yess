@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de flores</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+<header>
+    <h1>🌸 Catálogo de flores</h1>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="checkout.html">Carrito 🛒 (<span id="contador">0</span>)</a>
+    </nav>
+</header>
+
+<h2 class="titulo">Nuestras flores</h2>
+
+<div class="productos">
+
+
+<div class="flor">
+    <img src="img/rosa.jpg" alt="Rosa Roja">
+    <h3>Rosa Roja</h3>
+    <p>Q25</p>
+    <button onclick="agregarAlCarrito('Rosa Roja',25,'img/rosa.jpg')">Agregar</button>
+</div>
+
+<div class="flor">
+    <img src="img/tulipan.jpg" alt="Tulipán Rosado">
+    <h3>Tulipán Rosado</h3>
+    <p>Q30</p>
+    <button onclick="agregarAlCarrito('Tulipán Rosado',30,'img/tulipan.jpg')">Agregar</button>
+</div>
+
+<div class="flor">
+    <img src="img/girasol.jpg" alt="Girasol">
+    <h3>Girasol</h3>
+    <p>Q20</p>
+    <button onclick="agregarAlCarrito('Girasol',20,'img/girasol.jpg')">Agregar</button>
+</div>
+
+<div class="flor">
+    <img src="img/lirio.jpg" alt="Lirio Blanco">
+    <h3>Lirio Blanco</h3>
+    <p>Q28</p>
+    <button onclick="agregarAlCarrito('Lirio Blanco',28,'img/lirio.jpg')">Agregar</button>
+</div>
+
+<div class="flor">
+    <img src="img/orquidea.jpg" alt="Orquídea">
+    <h3>Orquídea</h3>
+    <p>Q40</p>
+    <button onclick="agregarAlCarrito('Orquídea',40,'img/orquidea.jpg')">Agregar</button>
+</div>
+
+<div class="flor">
+    <img src="img/margarita.jpg" alt="Margarita">
+    <h3>Margarita</h3>
+    <p>Q18</p>
+    <button onclick="agregarAlCarrito('Margarita',18,'img/margarita.jpg')">Agregar</button>
+</div>
+
+<div class="flor">
+    <img src="img/clavel.jpg" alt="Clavel">
+    <h3>Clavel</h3>
+    <p>Q22</p>
+    <button onclick="agregarAlCarrito('Clavel',22,'img/clavel.jpg')">Agregar</button>
+</div>
+
+<div class="flor">
+    <img src="img/lavanda.jpg" alt="Lavanda">
+    <h3>Lavanda</h3>
+    <p>Q26</p>
+    <button onclick="agregarAlCarrito('Lavanda',26,'img/lavanda.jpg')">Agregar</button>
+</div>
+
+<div class="flor">
+    <img src="img/peonia.jpg" alt="Peonía">
+    <h3>Peonía</h3>
+    <p>Q35</p>
+    <button onclick="agregarAlCarrito('Peonía',35,'img/peonia.jpg')">Agregar</button>
+</div>
+
+<div class="flor">
+    <img src="img/azucena.jpg" alt="Azucena">
+    <h3>Azucena</h3>
+    <p>Q27</p>
+    <button onclick="agregarAlCarrito('Azucena',27,'img/azucena.jpg')">Agregar</button>
+</div>
+
+
+</div>
+
+<div class="nav-btns">
+    <a href="index.html" class="btn-nav">⬅ Volver</a>
+    <a href="checkout.html" class="btn-nav">Siguiente ➡</a>
+</div>
+
+
+<section class="info-grid">
+
+    <div class="card card1">
+        <h2>Tecnologías utilizadas</h2>
+        <p>
+            En esta sección del sitio implementé el uso de HTML, CSS y JavaScript para mostrar el catálogo de productos de manera organizada. Considero que el uso de estas tecnologías permite presentar la información de forma clara y atractiva para el usuario.
+        </p>
+    </div>
+
+    <div class="card card2">
+        <h2>Almacenamiento</h2>
+        <p>
+            Para simular el funcionamiento de un carrito de compras, utilicé localStorage, lo cual me permitió guardar temporalmente los productos seleccionados sin necesidad de una base de datos real. Esto facilita la persistencia de la información durante la navegación.
+        </p>
+    </div>
+
+    <div class="card card3">
+        <h2>Entorno de desarrollo</h2>
+        <p>El proyecto lo desarrollé en Visual Studio Code, ya que facilita la organización y edición del código.</p>
+    </div>
+
+    <div class="card card4">
+        <h2>Importancia tecnológica</h2>
+        <p>
+            Desde mi punto de vista, la implementación de este tipo de soluciones tecnológicas permite mejorar la eficiencia de los procesos comerciales y brindar una mejor experiencia al usuario en entornos digitales.
+        </p>
+    </div>
+
+</section>
+
+
+
+<script src="js/carrito.js"></script>
+
+</body>
+</html>

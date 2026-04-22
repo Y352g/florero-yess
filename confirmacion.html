@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Confirmación de pedido</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <div class="flores">
+    <span>🌸</span>
+    <span>🌷</span>
+    <span>🌹</span>
+    <span>🌼</span>
+    <span>💐</span>
+</div>
+
+<header>
+    <h1>🌸 Pedido confirmado</h1>
+</header>
+
+<section class="confirmacion">
+    <section class="confirmacion card card2">
+
+
+<h2>🧾 Resumen de tu compra</h2>
+
+<ul id="lista"></ul>
+<h3 id="total"></h3>
+
+<div class="datos-cliente">
+    <p><strong>👤 Nombre:</strong> <span id="nombre"></span></p>
+    <p><strong>📍 Dirección:</strong> <span id="direccion"></span></p>
+    <p><strong>📅 Fecha de entrega:</strong> <span id="fecha"></span></p>
+</div>
+
+<div class="mensaje-final">
+    <p>🌸 ¡Gracias por tu compra en <strong>El Florero de Yess</strong>!</p>
+</div>
+
+
+</section>
+
+</section>
+
+
+<section class="info-grid">
+
+
+<div class="card card1">
+    <h2>Enfoque del estudio</h2>
+    <p>
+        El desarrollo de este proyecto se realizó bajo un enfoque práctico con características de tipo descriptivo, ya que me enfoqué en representar el funcionamiento de un sistema de comercio electrónico básico.
+    </p>
+</div>
+
+<div class="card card2">
+    <h2>Tipo de investigación</h2>
+    <p>
+        Considero que el enfoque de investigación es cualitativo, ya que se analizó principalmente la experiencia del usuario y la interacción con el sistema dentro de un entorno simulado.
+    </p>
+</div>
+
+<div class="card card3">
+    <h2>Transformación digital</h2>
+    <p>
+        A través de este proyecto puedo evidenciar cómo la transformación digital permite modernizar procesos tradicionales, facilitando la compra de productos mediante plataformas en línea.
+    </p>
+</div>
+
+<div class="card card4">
+    <h2>Uso de tecnologías</h2>
+    <p>
+        El uso de tecnologías web como HTML, CSS y JavaScript permitió desarrollar un sistema funcional e interactivo, demostrando cómo es posible crear soluciones digitales accesibles y eficientes.
+    </p>
+</div>
+
+
+</section>
+
+
+<div class="nav-btns">
+    <a href="index.html" class="btn-nav">🏠 Volver al inicio</a>
+</div>
+
+
+<script>
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+let datos = JSON.parse(localStorage.getItem("datos")) || {};
+
+let lista = document.getElementById("lista");
+let total = 0;
+
+carrito.forEach(item => {
+    let li = document.createElement("li");
+
+    li.innerHTML = `
+        <div class="item-carrito">
+            <img src="${item.imagen}">
+            <div>
+                <p><strong>${item.nombre}</strong></p>
+                <p>Precio: Q${item.precio}</p>
+            </div>
+        </div>
+    `;
+
+    lista.appendChild(li);
+    total += item.precio;
+});
+
+document.getElementById("total").textContent = "Total: Q" + total;
+document.getElementById("nombre").textContent = datos.nombre;
+document.getElementById("direccion").textContent = datos.direccion;
+document.getElementById("fecha").textContent = datos.fecha;
+
+// limpiar carrito después de mostrar
+localStorage.removeItem("carrito");
+</script>
+
+
+
+</body>
+</html>
